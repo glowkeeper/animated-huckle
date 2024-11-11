@@ -1,0 +1,33 @@
+@import "variables.css";
+
+@font-face {
+  font-family: 'Overpass';
+  src: url(../assets/fonts/Overpass-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: 'Overpass Mono';
+  src: url(../assets/fonts/OverpassMono-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: 'Lucida Handwriting';
+  src: url('../assets/fonts/lHandW.woff') format('woff');
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {  
+  
+  p {
+    font-size: 1rem;
+  }
+}
