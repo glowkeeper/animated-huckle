@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
 export const useMouseClick = () => {
 
-  const [button, setButton] = useState("")
+  const [click, setClick] = useState("")
 
   useEffect(() => {
 
@@ -11,29 +11,32 @@ export const useMouseClick = () => {
       //ev.button describes the mouse button that was clicked
       // 0 is left, 1 is middle, 2 is right
 
-      console.log('mouse button', ev.button)
-      
+      //console.log('mouse button', ev.button)
+
       switch(ev.button) {
         case 0:
-          setButton("Left")
+          setClick("Left")
           break;
         case 1:
-          setButton("Middle")
+          setClick("Middle")
           break;
         case 2:
-          setButton("Right")
+          setClick("Right")
           break;
         default:
+          setClick("Idle")
           console.log('mouse button', ev.button)
       }
+
+      ev.preventDefault()
     }
     
-    window.addEventListener('mousedown', updateMouseClick);
+    window.addEventListener('mousedown', updateMouseClick)
     
     return () => {
-      window.removeEventListener('mousedown', updateMouseClick);
+      window.removeEventListener('mousedown', updateMouseClick)
     }
   }, [])
 
-  return button;
+  return click
 }

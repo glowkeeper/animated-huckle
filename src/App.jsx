@@ -13,7 +13,6 @@ export const App = () => {
             <ambientLight intensity={0.5} />
             <directionalLight />
             {/* <OrbitControls makeDefault/> */}
-            {/* <Camera /> */}
             <Model />
           </Suspense>
         </Canvas>

@@ -4,7 +4,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { AnimationMixer } from 'three'
 
-import { useMousePosition, useMouseClick} from '../utils'
+import { useKeyPress, useMousePosition, useMouseClick } from '../utils'
 
 const gltf = './assets/3D/me/combined.gltf'
 const animations = {
@@ -23,8 +23,10 @@ export const Model = (props) => {
     //console.log('model', model)
     const modelAnimations = useAnimations(model.animations)
 
-    const mousePosition = useMousePosition();
-    const button = useMouseClick();
+    const keyPress = useKeyPress()
+    //console.log("modeling key", keyPress)
+    const mousePosition = useMousePosition()
+    const click = useMouseClick()
 
     const mixer = useMemo(() => {
         return new AnimationMixer(model.scene)
@@ -38,7 +40,11 @@ export const Model = (props) => {
                 //console.log('clip', clip, animation)
                 if(clip.name === animation) {
                     const action = mixer?.clipAction(clip)
-                    action?.play()
+                    if (action) 
+                    {
+                        mixer?.stopAllAction() 
+                        action?.play()
+                    }
                 }
             })
         }
@@ -47,7 +53,9 @@ export const Model = (props) => {
 
     useEffect(() => {
 
-        switch(button) {
+        console.log('model mouse click', click)
+
+        switch(click) {
             case "Left":
               setAnimation(animations.walking)
               break;
@@ -61,7 +69,21 @@ export const Model = (props) => {
               setAnimation(animations.idle)
         }
         
-    }, [button]) 
+    }, [click]) 
+
+    useEffect(() => {
+
+        //console.log('model key press', keyPress)
+
+        switch(keyPress) {
+            case "Space":
+              setAnimation(animations.idle)
+              break;
+            default:
+              setAnimation(animations.idle)
+        }
+        
+    }, [keyPress]) 
     
 
     useFrame((state, delta) => {  
