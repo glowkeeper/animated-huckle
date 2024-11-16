@@ -1,3 +1,5 @@
+export * from './KeyCodes'
+export * from './MouseClickCodes'
 export * from './useKeyPress'
 export * from './useMouseClick'
 export * from './useMousePosition'
