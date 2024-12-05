@@ -3,15 +3,9 @@ import { useFrame } from '@react-three/fiber'
 import { useAnimations } from '@react-three/drei'
 import { AnimationMixer } from 'three'
 
-import { useKeyPress, useMousePosition, useMouseClick } from '../utils'
-import { KeyCodes, MouseClickCodes } from '../utils'
+//import { useKeyPress, useMousePosition, useMouseClick } from '../utils'
+import { Animations, useKeyPress, useMousePosition } from '../utils'
 
-const animations = {
-    idle: 'idle',
-    walking: 'walking',
-    running: 'running',
-    standingJump: 'standingJump'
-}
 const ninety = Math.PI / 2
 
 export const Animate = (props) => {
@@ -24,13 +18,13 @@ export const Animate = (props) => {
     const keyPress = useKeyPress(true)
     //console.log("modeling key", keyPress)
     const mousePosition = useMousePosition()
-    const click = useMouseClick(true)
+    //const click = useMouseClick(true)
 
     const mixer = useMemo(() => {
         return new AnimationMixer(model.scene)
     }, [model.scene])
 
-    const [animation, setAnimation] = useState(animations.idle)
+    const [animation, setAnimation] = useState(Animations.idle.name)
 
     useEffect(() => {
         if (modelAnimations.clips.length) {
@@ -49,33 +43,42 @@ export const Animate = (props) => {
         
     }, [animation, modelAnimations, mixer])    
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        console.log('model mouse click', click)
+    //     console.log('model mouse click', click)
 
-        switch(click) {
-            case MouseClickCodes.Left:
-              setAnimation(animations.walking)
-              break;
-            case MouseClickCodes.Middle:              
-              setAnimation(animations.standingJump)
-              break;
-            case MouseClickCodes.Right:
-              setAnimation(animations.running)
-              break;
-            default:
-              console.log("mouse click request", click)
-        }
+    //     switch(click) {
+    //         case Animations.walking.mouseClickCode:
+    //           setAnimation(Animations.walking.name)
+    //           break;
+    //         case Animations.standingJump.mouseClickCode:              
+    //           setAnimation(Animations.standingJump.name)
+    //           break;
+    //         case Animations.running.mouseClickCode:
+    //           setAnimation(Animations.running.name)
+    //           break;
+    //         default:
+    //           console.log("mouse click request", click)
+    //     }
         
-    }, [click]) 
+    // }, [click]) 
 
     useEffect(() => {
 
-        console.log('model key press', keyPress)
+        //console.log('model key press', keyPress)
 
         switch(keyPress) {
-            case KeyCodes.AltLeft:
-              setAnimation(animations.idle)
+            case Animations.idle.keyCode:
+              setAnimation(Animations.idle.name)
+              break;
+            case Animations.walking.keyCode:
+              setAnimation(Animations.walking.name)
+              break;
+            case Animations.standingJump.keyCode:              
+              setAnimation(Animations.standingJump.name)
+              break;
+            case Animations.running.keyCode:
+              setAnimation(Animations.running.name)
               break;
             default:              
               console.log("key press request", keyPress)

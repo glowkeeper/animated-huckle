@@ -6,23 +6,34 @@ body {
   padding: 0;
 }
 
-#root {
-  background-color: var(--background-color);
-  max-width: 100%;
-  min-height: 100vh;
-}
-
 main {
   display: grid;
-  place-items: center end; 
-  max-width: 100%;
-  min-height: 100vh;
+  place-items: center center;
+
+  position: fixed;
+  top: var(--header-height);
+  
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+  width: 100%;
+  
+  background-color: var(--background-color);
+}
+
+main  aside {
+  display: grid;  
+  place-items: start end;
+}
+
+main #AnimationCanvas {
+  display: grid;
+  place-items: center end;
+  height: 100%;
+  width: 100%;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: var(--background-color);
-    
+    color: var(--color);    
   }
 
   a:hover {

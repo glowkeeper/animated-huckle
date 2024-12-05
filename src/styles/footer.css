@@ -1,0 +1,11 @@
+@import "variables.css";
+
+footer {
+  display: grid;
+  place-items: center center; 
+  position: fixed;
+  bottom: 0; 
+  height: var(--footer-height);
+  width: 100vw;
+  background-color: var(--footer-colour);
+}

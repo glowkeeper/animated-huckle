@@ -1,34 +1,44 @@
 :root { 
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --line-height: 1.5;
+  --font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #ffffff;
+  --color-scheme: light dark;
+  --color: rgba(0, 0, 0, 0.87);
+  --header-colour: #d6b774;
+  --footer-colour: #d6b774;
+  --background-color: #e1dea1;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --font-synthesis: none;
+  --text-rendering: optimizeLegibility;
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
+
+  --header-height: 6rem;
+  --footer-height: 4rem;
 }
 
 @media screen and (max-width: 768px) {
   :root {
 
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
+    --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --line-height: 1.5;
+    --font-weight: 400;
 
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    --color-scheme: light dark;
+    --color: rgba(0, 0, 0, 0.87);
+    --header-colour: #557a95;
+    --footer-colour: #557a95;
+    --background-color: #e1dea1;
 
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    --font-synthesis: none;
+    --text-rendering: optimizeLegibility;
+    --webkit-font-smoothing: antialiased;
+    --moz-osx-font-smoothing: grayscale;
+
+    --header-height: 3rem;
+    --footer-height: 4rem;
   }
   
 }
