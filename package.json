@@ -1,13 +1,12 @@
 {
   "name": "animated-huckle",
   "private": true,
-  "version": "0.2.0",
-  "homepage": "http://huckle.studio/animated-huckle",
-  "type": "module",
+  "version": "1.0.0",
+  "homepage": "https://huckle.studio/animated-huckle",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "predeploy": "vite build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
