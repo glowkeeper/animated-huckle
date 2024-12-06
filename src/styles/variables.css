@@ -15,8 +15,8 @@
   --webkit-font-smoothing: antialiased;
   --moz-osx-font-smoothing: grayscale;
 
-  --header-height: 6rem;
-  --footer-height: 4rem;
+  --header-height: 7rem;
+  --footer-height: 5rem;
 }
 
 @media screen and (max-width: 768px) {

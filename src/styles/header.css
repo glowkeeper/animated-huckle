@@ -2,7 +2,7 @@
 
 header {
   display: grid;
-  place-items: center center;
+  grid-template-columns: 1fr 6fr 1fr;
 
   position: fixed;
   top: 0;
@@ -15,4 +15,17 @@ header {
   width: 100vw;
 
   background-color: var(--header-colour);
+}
+
+header ul
+{
+  display: grid;
+  place-items: start start;
+  list-style-type: none;
+}
+
+header h1
+{
+  display: grid;
+  place-items: start center;
 }

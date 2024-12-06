@@ -7,8 +7,8 @@ body {
 }
 
 main {
-  display: grid;
-  place-items: center center;
+  display: grid; 
+  place-items: start start;
 
   position: fixed;
   top: var(--header-height);
@@ -19,17 +19,12 @@ main {
   background-color: var(--background-color);
 }
 
-main  aside {
-  display: grid;  
-  place-items: start end;
-}
-
 main #AnimationCanvas {
   display: grid;
-  place-items: center end;
   height: 100%;
   width: 100%;
 }
+
 
 @media (prefers-color-scheme: light) {
   :root {
