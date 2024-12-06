@@ -1,7 +1,8 @@
 {
-  "name": "animatedhuckle",
+  "name": "animated-huckle",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.2.0",
+  "homepage": "http://huckle.studio/animated-huckle",
   "type": "module",
   "scripts": {
     "dev": "vite",
