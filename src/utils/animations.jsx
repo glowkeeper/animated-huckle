@@ -6,13 +6,13 @@ export const Animations = {
         keyCode: 'KeyW'
     },
     idle: {
-        title: 'Idle',
+        title: 'Idling',
         name: 'idle',
         key: 'A',
         keyCode: 'KeyA'
     },
     standingJump: {
-        title: 'Standing Jump',
+        title: 'Jumping',
         name: 'standingJump',
         key: 'S',
         keyCode: 'KeyS'
